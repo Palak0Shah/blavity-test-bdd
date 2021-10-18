@@ -21,18 +21,18 @@ orbs:
   # See the orb documentation here: https://circleci.com/developer/orbs/orb/circleci/python
   python: circleci/python@1.2
   anchore: anchore/anchore-engine@1.6.0
-references:
-  requirements_txt: &requirements_txt
-    description: Name of the requirements.txt file
-    type: string
-    default: "requirements.txt"
-  parameters:
-    python_version: &python_version
-      description: Version of the CircleCI Python docker image to use
+  references:
+    requirements_txt: &requirements_txt
+      description: Name of the requirements.txt file
       type: string
-      default: "3.7"
-  cache_key: &cache_key
-    key: deps-{{ .Branch }}-{{ checksum "<<parameters.requirements_txt>>" }}
+      default: "requirements.txt"
+    parameters:
+      python_version: &python_version
+        description: Version of the CircleCI Python docker image to use
+        type: string
+        default: "3.7"
+    cache_key: &cache_key
+      key: deps-{{ .Branch }}-{{ checksum "<<parameters.requirements_txt>>" }}
 
 # Define a job to be invoked later in a workflow.
 # See: https://circleci.com/docs/2.0/configuration-reference/#jobs
@@ -74,4 +74,4 @@ workflows:
   sample: # This is the name of the workflow, feel free to change it to better match your workflow.
     # Inside the workflow, you define the jobs you want to run.
     jobs:
-      - build-and-test
+     - build-and-test
