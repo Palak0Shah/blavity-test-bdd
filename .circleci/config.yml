@@ -9,9 +9,18 @@ jobs:
       steps:
         - checkout
         - python/install-deps
+        
         # - pip install beahve
         # - behave ./features/navBar.feature
         # - behave ./features/Homepage.feature
+
+commands:
+  build_source:
+    description: 'runs feature file'
+    steps:
+      - behave: ./features/navBar.feature
+
+
 
 workflows: 
    main:
