@@ -9,7 +9,7 @@ jobs:
       steps:
         - checkout
         - python/install-deps
-        
+        - run: behave ./features/navBar.feature
         # - pip install beahve
         # - behave ./features/navBar.feature
         # - behave ./features/Homepage.feature
