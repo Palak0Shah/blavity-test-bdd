@@ -9,6 +9,7 @@ from nose.tools import assert_equal
 
 
 def environment():
+    print("about to launch the chrome browser")
     driver.maximize_window()
     driver.get(url_name)
     time.sleep(5)
