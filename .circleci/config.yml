@@ -1,19 +1,19 @@
 version: 2.1
 
 orbs:
-     python:circleci/python@0.3.2
+     python: circleci/python@0.3.2
 
 jobs:
      build-and-test:
       executor: python/default
       steps:
-	-checkout
-	-python/install-deps
-	-pip install behave
-	-behave /features/navBar.feature
-	-behave /features/Homepage.feature
+        - checkout
+        - python/install-deps
+        # - pip install beahve
+        # - behave ./features/navBar.feature
+        # - behave ./features/Homepage.feature
 
 workflows: 
    main:
-	jobs:
-	  - build-and-test
+     jobs:
+       - build-and-test
