@@ -18,7 +18,7 @@ options.add_argument('user-agent={0}'.format(user_agent))
 
 # driver = webdriver.Chrome(ChromeDriverManager().install(), options=options)
 
-driver = webdriver.Chrome("/ChromeExe/chromedriver_linux64/chromedriver.exe",options=options)
+driver = webdriver.Chrome("/ChromeExe/chromedriver_linux64/chromedriver",options=options)
 
 # driver = webdriver.Chrome(ChromeDriverManager(chrome_type=ChromeType.GOOGLE).install(),options=options)
 
