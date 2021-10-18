@@ -15,7 +15,7 @@ options.add_argument('user-agent={0}'.format(user_agent))
 # use this code below to execute headless state
 # driver = webdriver.Chrome(ChromeDriverManager().install(), options=options)
 
-driver = webdriver.Chrome(ChromeDriverManager().install())
+driver = webdriver.Chrome(ChromeDriverManager(chrome_type=ChromeType.GOOGLE).install())
 
 url_name = "https://staging.blavity.com/"
 
