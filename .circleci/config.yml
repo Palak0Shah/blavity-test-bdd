@@ -53,5 +53,3 @@ workflows:
     # Inside the workflow, you define the jobs you want to run.
     jobs:
       - build-and-test
-          working_directory:~/blavity-test-bdd/tree/master/features
-          
