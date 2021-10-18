@@ -15,10 +15,10 @@ jobs:
         # - behave ./features/Homepage.feature
 
 commands:
-  build_source:
-    description: 'runs feature file'
-    steps:
-      - behave: ./features/navBar.feature
+    build_source:
+      description: 'runs feature file'
+      steps:
+        - behave: ./features/navBar.feature
 
 
 
