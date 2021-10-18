@@ -17,6 +17,7 @@ jobs:
   build-and-test: # This is the name of the job, feel free to change it to better match what you're trying to do!
     # These next lines defines a Docker executors: https://circleci.com/docs/2.0/executor-types/
     # You can specify an image from Dockerhub or use one of the convenience images from CircleCI's Developer Hub
+    working_directory: ~/blavity-test-bdd/tree/master/features
     # A list of available CircleCI Docker convenience images are available here: https://circleci.com/developer/images/image/cimg/python
     # The executor is the environment in which the steps below will be executed - below will use a python 3.8 container
     # Change the version below to your required version of python
@@ -36,8 +37,15 @@ jobs:
       - run:
           name: Run tests
           # This assumes pytest is installed via the install-package step above
-          command: pytest
-
+          command: |  # use pipenv to install dependencies
+           sudo pip install pipenv
+           sudo pip install pytest
+           pip install behave
+           pipenv run behave navBar.py
+          # pipenv install
+          # sudo pip install pytest 
+          # sudo pip install pipenv
+        
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
 workflows:
