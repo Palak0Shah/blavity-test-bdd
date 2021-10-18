@@ -1,0 +1,27 @@
+https://github.com/Palak0Shah/blavity-test-bdd/tree/master/features
+
+/blavity-test-bdd/tree/master/features
+
+having files as
+
+Homepage.feature
+
+navBar.feature
+
+working_directory: ~/blavity-test-bdd/tree/master/features
+docker:
+      - image: circleci/python:3.6.4  # primary container for the build job
+	environment:
+          PIPENV_VENV_IN_PROJECT: true
+	steps:
+      - checkout  # checkout source code to working directory
+      - run:
+          command: |  # use pipenv to install dependencies
+            sudo pip install pipenv
+	    sudo pip install behave
+            pipenv install
+      - run:
+          command: |
+            pipenv run behave navBar.py
+      - store_test_results:
+          path: test-results
