@@ -7,7 +7,7 @@ from selenium.webdriver.common.action_chains import ActionChains
 import time
 
 options = Options()
-options.headless = False
+options.headless = True
 options.add_argument('--start-maximized')
 options.add_argument("--headless")
 options.add_argument("--window-size=1920x1080")
@@ -17,7 +17,7 @@ options.add_argument('user-agent={0}'.format(user_agent))
 # use this code below to execute headless state
 # driver = webdriver.Chrome(ChromeDriverManager().install(), options=options)
 
-driver = webdriver.Chrome(ChromeDriverManager(chrome_type=ChromeType.GOOGLE).install())
+driver = webdriver.Chrome(ChromeDriverManager(chrome_type=ChromeType.GOOGLE).install(),options=options)
 
 url_name = "https://staging.blavity.com/"
 
