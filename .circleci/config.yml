@@ -36,10 +36,11 @@ jobs:
           name: Run tests
           # This assumes pytest is installed via the install-package step above
           command: |  # use pipenv to install dependencies
-           sudo pip install pipenv
-           sudo pip install pytest
-           pip install behave
-           run behave /blavity-test-bdd/tree/master/features/navBar.py
+            pip install behave
+            run behave /blavity-test-bdd/tree/master/features/navBar.py
+          #  sudo pip install pipenv
+          #  sudo pip install pytest
+           
           # pipenv install
           # sudo pip install pytest 
           # sudo pip install pipenv
