@@ -1,6 +1,15 @@
 # Use the latest 2.1 version of CircleCI pipeline process engine.
 # See: https://circleci.com/docs/2.0/configuration-reference
 version: 2.1
+parameters:
+  requirements_txt:
+    description: Name of the requirements.txt file
+    type: string
+    default: requirements.txt
+  python_version:
+    description: Version of the CircleCI Python docker image to use
+    type: string
+    default: '3.7'
 
 # Orbs are reusable packages of CircleCI configuration that you may share across projects, enabling you to create encapsulated, parameterized commands, jobs, and executors that can be used across multiple projects.
 # See: https://circleci.com/docs/2.0/orb-intro/
