@@ -9,6 +9,7 @@ import time
 options = Options()
 options.headless = True
 options.add_argument('--start-maximized')
+options.add_argument('--no-sandbox')
 options.add_argument("--headless")
 options.add_argument("--window-size=1920x1080")
 options.binary_location = "ChromeExe/chromedriver_linux64/chromedriver"
