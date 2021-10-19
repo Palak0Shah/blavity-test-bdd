@@ -6,14 +6,16 @@ orbs:
 jobs:
      build-and-test:
       docker:
-        - image: cimg/python:3.10.0
+        - image: cimg/python:3.7-browsers
      # executor: python/default
       steps:
         - checkout
         - python/install-deps
         - run: python --version
+        - run: google-chrome --version
         - run: python testScript.py
-        - run: behave ./features/navBar.feature
+        - run: behave ./features/navBar.
+        
         # - pip install beahve
         # - behave ./features/navBar.feature
         # - behave ./features/Homepage.feature
