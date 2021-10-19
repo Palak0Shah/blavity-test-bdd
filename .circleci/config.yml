@@ -15,6 +15,7 @@ jobs:
         - python/install-deps
         - run: python --version
         - run: google-chrome --version
+        - run: chromedriver --version
         - run: python testScript.py
         - run: behave ./features/navBar.
         
